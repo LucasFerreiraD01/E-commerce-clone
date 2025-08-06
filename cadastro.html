@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  
+  <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div{
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 80px;
+        border-radius: 15px;
+        color: white;
+    }
+    input{
+        padding: 10px;
+        outline: none;
+        border: none;
+        font-size: 15px;
+    }
+    button{
+        border: none;
+        border-radius: 10px;
+        color: black;
+    }
+  </style>
+</head>
+<body>
+     <div>
+    <h2>Formulário de Cadastro</h2>
+    
+        <form>
+        <label for="nome">Nome completo:</label><br>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+      <br><br>
+        <label for="usuario">Seu Email:</label><br>
+        <input type="email" id="usuario" placeholder="Digite seu email">
+      <br> <br>
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        </form>
+      <br>
+      <button type="submit">Cadastrar</button>
+     </div>
+
+</body>
+</html>
