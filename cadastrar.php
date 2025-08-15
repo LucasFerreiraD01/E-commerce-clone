@@ -10,5 +10,5 @@ $user = User::cadastrar($nome ,$email, $senha);
 if ($user !== true) {
     header("Location: cadastro.php?erro=$user");
 } else {
-    header("Location: cadastro.php?sucesso=usuario_cadastrado");
+    header("Location: cadastro.php?sucesso=usuario_cadastrado")
 }
