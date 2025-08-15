@@ -36,13 +36,30 @@
     button:hover{
       background-color: deepskyblue;
       cursor: pointer;
-}
+    }
   </style>
+  <!-- Add SweetAlert2 CSS e JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('erro') === 'usuario_ja_cadastrado') {
+                Swal.fire('Erro', 'Usuário já cadastrado.', 'erro');
+            } else if (params.get('erro')){
+                Swal.fire('Erro', params.get('erro'), 'erro');
+            }
+
+            if (params.get('sucesso') === 'usuario_cadastrado'){
+                Swal.fire('Sucesso', 'Usuário cadastrado com sucesso!', 'sucesso');
+            }  
+           
+        });
+    </script>
 </head>
 <body>
      <div>
     <h1>Cadastro</h1>    
-        <form>
+        <form method="POST" action="cadastrar.php">
         <label for="nome">Nome completo:</label><br>
         <input type="text" id="nome" placeholder="Digite seu nome">
       <br><br>
@@ -51,9 +68,9 @@
       <br> <br>
         <label for="senha">Senha:</label><br>
         <input type="password" id="senha" placeholder="Digite sua senha">
-        </form>
+        <button type="submit">Cadastrar</button>
+      </form>
       <br>
-      <button type="submit">Cadastrar</button>
      </div>
 
 </body>

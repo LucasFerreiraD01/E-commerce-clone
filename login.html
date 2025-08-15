@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-</head>
   <style>
     body{
         font-family: Arial, Helvetica, sans-serif;
@@ -38,23 +37,45 @@
       cursor: pointer;
     }
   </style>
+  <!-- Add SweetAlert2 CSS e JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('error') === 'senha_incorreta') {
+                Swal.fire('Erro', 'Senha incorreta.', 'error');
+            } else if (params.get('error') === 'usuario_inexistente') {
+                Swal.fire('Erro', 'Usuário não existe.', 'error');
+            } else if (params.get('error') === 'erro_autenticacao') {
+                Swal.fire('Erro', 'Erro ao autenticar.', 'error');
+            }
+        });
+    </script>
+    <!-- Add ajax e o plugin de JQuery pra máscara -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/bindings/inputmask.binding.min.js"></script>
+    <!--Inicia o plugin de máscara -->
+    <script>
+        $(document).ready(function(){
+            $('#email').inputmask('email', {
+                showMaskOnHover: true
+            });
+        });
+    </script>
+</head>
 <body>
-
-
-
      <div>
         <h1>Login</h1>
         <form>
-        <label for="usuario">Nome de usuário:</label><br>
-        <input type="text" id="usuario" placeholder="Digite seu nome de usuário">
-      <br><br>
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" placeholder="Digite sua senha">
+          <label for="email">E-mail:</label><br>
+          <input type="text" id="email" placeholder="Digite seu e-mail">
+          <br><br>
+          <label for="senha">Senha:</label><br>
+          <input type="password" id="senha" placeholder="Digite sua senha">
+          <button type="submit">Entrar</button>
         </form>
-        <br>
-        <button type="submit">Entrar</button>
+        <br>        
     </div>
-
-
 </body>
 </html>
