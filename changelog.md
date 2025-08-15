@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.4] - 15-08-25
+### Primeira integração
+
+### CHANGED
+    - Preenche aqui Lucas o que viu de mudanças
+
 ## [0.1.3.1] - 14-08-25
 
 ### CHANGED
